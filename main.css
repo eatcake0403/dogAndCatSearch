@@ -1,0 +1,15 @@
+.root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.root .card {
+  width: 50%;
+  height: 50%;
+  background: #fff;
+  box-shadow: 0px 0px 22px 1px rgb(0 0 0 / 20%);
+  border-radius: 5px;
+}
