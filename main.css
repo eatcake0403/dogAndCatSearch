@@ -1,4 +1,3 @@
-
 #breedsSelect {
   width: 100%;
   height: 50px;
@@ -9,8 +8,40 @@
   border-radius: 5px;
 }
 
+.inputCat {
+  border: 1px solid rgb(194, 211, 255);
+  color: rgb(88, 107, 156);
+  background: #fff;
+  width: 100%;
+  height: 47px;
+  padding: 0 15px;
+  margin-left: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.btnOutside .button {
+  width: 100%;
+}
+
+.btnOutside .button.send {
+  width: 100px;
+}
+
 #breedsSelect:focus {
   outline: none;
+}
+
+.button {
+  border: 1px solid rgb(194, 211, 255);
+  color: rgb(88, 107, 156);
+  background: #fff;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  margin: 0 10px;
 }
 
 .root {
@@ -19,6 +50,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.root .tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.root .tabs .button {
+  margin: 0 10px;
+  height: 100%;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  width: 70px;
+}
+
+.root .tabs .button.active {
+  border: 1px solid rgb(130, 153, 212);
+  color: rgb(130, 155, 220);
+  background: rgb(225, 233, 255);
 }
 
 .card {
@@ -40,14 +92,8 @@
 
 .card .col .button {
   margin-left: 20px;
-  width: 70px;
   height: 100%;
-  border: 1px solid rgb(194, 211, 255);
-  color: rgb(88, 107, 156);
-  background: #fff;
-  border-radius: 5px;
-  font-size: 15px;
-  cursor: pointer;
+  width: 70px;
 }
 
 .card .img {
@@ -56,4 +102,29 @@
   border: 1px solid rgb(194, 211, 255);
   object-fit: contain;
   border-radius: 5px;
+}
+
+.card.none {
+  display: none;
+}
+
+.card .btnOutside {
+  display: flex;
+}
+
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.spin {
+  display: 'none';
+  background: linear-gradient(90deg , #d3e8ff, #556679, #dcecff);
+  width: 0%;
+  height: 7px;
+  animation: loading .8s ease infinite;
+  position: relative;
 }

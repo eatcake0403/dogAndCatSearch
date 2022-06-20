@@ -5,8 +5,23 @@
     <script src="main.js"></script>
   </head>
   <body>
+    <div class="spin" id="spin"></div>
     <div class="root">
-      <div class="card">
+      <div class="tabs" id="tabs">
+        <button
+          class="button"
+          onClick="changeTab(0)"
+        >
+          狗
+        </button>
+        <button
+          class="button active"
+          onClick="changeTab(1)"
+        >
+          貓
+        </button>
+      </div>
+      <div class="card none">
         <div class="col">
           <select id="breedsSelect">
             <option value="">
@@ -22,6 +37,37 @@
           </button>
         </div>
         <img class="img" id="dogImg" src="dogDefault.svg"/>
+      </div>
+      <div class="card">
+        <div class="btnOutside">
+          <button
+            class="button"
+            onClick="randomImgCat()"
+          >
+            隨機產生貓貓圖片
+          </button>
+          <button
+            class="button"
+            onClick="randomGIFCat()"
+          >
+            隨機產生貓貓GIF
+          </button>
+        </div>
+        <div class="btnOutside">
+          <input
+            class="inputCat"
+            id="inputCat"
+            placeholder="隨機產生貓貓圖片 只支援英文"
+          />
+          <button
+            class="button send"
+            type="button"
+            onClick="sayTextCat(document.querySelector('#inputCat').value)"
+          >
+            送出
+          </button>
+        </div>
+        <img class="img" id="CatImg" src="catDefault.jpeg"/>
       </div>
     </div>
   </body>
