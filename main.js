@@ -12,14 +12,12 @@ const baseURL = 'https://dog.ceo/api'
 
 async function getBreeds () {
   const reqURL = `${baseURL}/breeds/list/all`
-  const data = (await (await fetch(reqURL)).json()).message
-  return data
+  return (await (await fetch(reqURL)).json()).message
 }
 
 
 async function fillBreeds (vals) {
   const element = document.querySelector('#breedsSelect')
-  element.innerHTML = ''
   for (const val in vals) {
     const option = document.createElement('option')
     option.value = val
@@ -28,6 +26,18 @@ async function fillBreeds (vals) {
   }
 }
 
+
+async function searchImg (breed) {
+  const reqURL = `${baseURL}/breed/${breed}/images/random`
+  return (await (await fetch(reqURL)).json()).message
+}
+
+async function fillImg (breed) {
+  if (!breed) return
+  const element = document.querySelector('#dogImg')
+  const img = await searchImg(breed)
+  element.src = img
+}
 
 window.onload = async () =>  {
   const data = await getBreeds()
